@@ -34,8 +34,8 @@ end
 
 h = h.sort.to_h
 
-puts '|' + dirs.join('|') + '|'
-puts '|' + dirs.map{':---'}.join('|') + '|'
+puts '| |' + dirs.join('|') + '|'
+puts '|:---|' + dirs.map{':---'}.join('|') + '|'
 h.each do |k, v|
   print "|#{k}"
   dirs.each do |dir|
