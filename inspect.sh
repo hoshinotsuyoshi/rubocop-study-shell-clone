@@ -13,8 +13,7 @@ cd -
 
 set -xe
 BUNDLE=$HOME/.gem/ruby/2.2.1/bin/bundle
-#for project in fastladder redmine spree rubygems.org whitehall lodge gitlabhq
-for project in whitehall lodge
+for project in fastladder redmine spree rubygems.org whitehall lodge gitlabhq
 do
   cd ./repos/$project
   rm -f .rubocop.yml
