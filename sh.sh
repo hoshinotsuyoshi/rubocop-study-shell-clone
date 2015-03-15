@@ -17,9 +17,15 @@ for project in fastladder redmine spree rubygems.org whitehall lodge gitlabhq
 do
   cd ./repos/$project
   rm -f .rubocop.yml
+  cat << EOS > .rubocop.yml
+AllCops:
+  RunRailsCops: true
+EOS
   rm -rf ./.bundle
-  echo "source 'https://rubygems.org'" > Gemfile
-  echo "gem 'rubocop'" >> Gemfile
+  cat << EOS > Gemfile
+source 'https://rubygems.org'
+gem 'rubocop'
+EOS
   #$BUNDLE -j4
   $BUNDLE exec rubocop --auto-gen-config || true
   mkdir -p ../../$project
